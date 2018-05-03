@@ -3,5 +3,7 @@
  */
 (function(){
     var app = angular.module('booksApp', ['ngRoute']);
-    
+    app.config(['$locationProvider', function($locationProvider) {
+        $locationProvider.hashPrefix('')
+    }]);
 })();
