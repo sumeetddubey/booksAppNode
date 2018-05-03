@@ -1,1 +1,9 @@
 <h2>Search Page!</h2>
+
+<form>
+    <div class="form-group">
+        <label for="searchInput">Enter text</label>
+        <input type="text" class="form-control" id="searchInput" ng-model="inputText">
+    </div>
+    <button ng-click="model.search(inputText)" class="btn btn-primary">Search Books!</button>
+</form>
