@@ -8,17 +8,24 @@
     function SearchController(SearchService){
         var vm=this;
         vm.search = search;
+        vm.formatDate = formatDate;
 
         function search(inputText){
             SearchService.searchBooksByText(inputText)
                 .then(
                     function(doc){
                         vm.searchResults=doc.data;
+                        console.log(vm.searchResults.results[0]);
                     },
                     function(err){
                         console.log(err);
                     }
                 )
+        }
+
+        function formatDate(date){
+            var d = new Date(date);
+            return d.toLocaleDateString();
         }
     }
 })();

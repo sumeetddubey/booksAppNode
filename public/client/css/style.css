@@ -1,0 +1,12 @@
+.titleWrapper{
+    min-height: 120px;
+}
+
+.floatLeft{
+    float: left
+}
+
+.artwork{
+    width: 100px;
+    height: 100px
+}

@@ -6,4 +6,22 @@
         <input type="text" class="form-control" id="searchInput" ng-model="inputText">
     </div>
     <button ng-click="model.search(inputText)" class="btn btn-primary">Search Books!</button>
+
+    <div class="list-group">
+        <div ng-repeat="result in model.searchResults.results" class="list-group-item list-group-item-action flex-column align-items-start mt-4">
+            <div class="mb-1 titleWrapper">
+                <div class="floatLeft mr-4">
+                    <img class="artwork" ng-src="{{result.artworkUrl100}}">
+                </div>
+                <div>
+                    <a ng-href="{{result.trackViewUrl}}" target="_blank"><h5 class="pt-2">{{result.trackName}}</h5></a>
+                    <a ng-href="{{result.artistViewUrl}}" target="_blank"><p class="lead">Written By {{result.artistName}}</p></a>
+                </div>
+            </div>
+            <div class="font-weight-bold">Genres: {{result.genres}}</div>
+            <div class="font-weight-bold">Release Date: {{model.formatDate(result.releaseDate)}} </div>
+            <div class="font-weight-bold">Price: {{result.formattedPrice}}</div>
+            <p class="my-2" ng-bind-html="result.description"></p>
+        </div>
+    </div>
 </form>
