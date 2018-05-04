@@ -15,7 +15,6 @@
                 .then(
                     function(doc){
                         vm.searchResults=doc.data;
-                        console.log(vm.searchResults.results[0]);
                     },
                     function(err){
                         console.log(err);
@@ -27,5 +26,9 @@
             var d = new Date(date);
             return d.toLocaleDateString();
         }
+
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+        })
     }
 })();
