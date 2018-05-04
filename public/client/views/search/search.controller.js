@@ -26,9 +26,5 @@
             var d = new Date(date);
             return d.toLocaleDateString();
         }
-
-        $('#myModal').on('shown.bs.modal', function () {
-            $('#myInput').trigger('focus')
-        })
     }
 })();
